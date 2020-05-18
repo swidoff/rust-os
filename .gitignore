@@ -1,0 +1,8 @@
+/target
+.idea/.gitignore
+.idea/codeStyles
+.idea/misc.xml
+.idea/modules.xml
+.idea/sbt.xml
+.idea/vcs.xml
+rust-os.iml
