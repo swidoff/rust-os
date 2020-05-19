@@ -7,6 +7,8 @@ edition = "2018"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+# This crate implements a basic BIOS bootloader without any C dependencies, just Rust and inline assembly.
+bootloader = "0.9.2"
 
 # Disable stack unwinding which requires OS specific libraries.
 
