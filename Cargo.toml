@@ -10,7 +10,9 @@ edition = "2018"
 # This crate implements a basic BIOS bootloader without any C dependencies, just Rust and inline assembly.
 bootloader = "0.9.2"
 spin = "0.5.2"
+uart_16550 = "0.2.7"
 volatile = "0.2.6"
+x86_64 = "0.11.0"
 
 [dependencies.lazy_static]
 version = "1.4.0"
@@ -23,3 +25,12 @@ panic = "abort"
 
 [profile.release]
 panic = "abort"
+
+[package.metadata.bootimage]
+test-args = ["-device", "isa-debug-exit,iobase=0xf4,iosize=0x04", "-serial", "stdio", "-display", "none"]
+test-success-exit-code = 33
+test-timeout = 300
+
+[[test]]
+name = "should_panic"
+harness = false
