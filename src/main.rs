@@ -12,7 +12,7 @@ use rust_os::println;
 #[cfg(not(test))]
 fn panic(info: &PanicInfo) -> ! {
     println!("{}", info);
-    loop {}
+    rust_os::hlt_loop();
 }
 
 #[panic_handler]
@@ -32,5 +32,5 @@ pub extern "C" fn _start() -> ! {
     #[cfg(test)] test_main();
 
     println!("It did not crash");
-    loop {}
+    rust_os::hlt_loop();
 }
