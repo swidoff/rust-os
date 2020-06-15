@@ -4,10 +4,11 @@ use core::ptr::null_mut;
 use x86_64::structures::paging::{FrameAllocator, Mapper, Size4KiB, Page, PageTableFlags};
 use x86_64::structures::paging::mapper::MapToError;
 use x86_64::VirtAddr;
-use crate::allocator::linked_list::LinkedListAllocator;
+use crate::allocator::fixed_size_block::FixedSizeBlockAllocator;
 
 pub mod bump;
 pub mod linked_list;
+pub mod fixed_size_block;
 
 pub const HEAP_START: usize = 0x_4444_4444_0000;
 pub const HEAP_SIZE: usize = 100 * 1024;  // 100 KiB
@@ -42,7 +43,7 @@ pub fn init_heap(
 }
 
 #[global_allocator]
-static ALLOCATOR: Locked<LinkedListAllocator> = Locked::new(LinkedListAllocator::new());
+static ALLOCATOR: Locked<FixedSizeBlockAllocator> = Locked::new(FixedSizeBlockAllocator::new());
 
 pub struct Dummy;
 
