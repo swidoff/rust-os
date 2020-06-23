@@ -8,17 +8,17 @@ edition = "2018"
 
 [dependencies]
 # This crate implements a basic BIOS bootloader without any C dependencies, just Rust and inline assembly.
-bootloader = {version = "0.9.2", features = ["map_physical_memory"]}
-linked_list_allocator = "0.8.4"
-pc-keyboard = "0.5.0"
-pic8259_simple = "0.2.0"
-spin = "0.5.2"
-uart_16550 = "0.2.7"
-volatile = "0.2.6"
-x86_64 = "0.11.0"
+bootloader = {version = "*", features = ["map_physical_memory"]}
+linked_list_allocator = "*"
+pc-keyboard = "*"
+pic8259_simple = "*"
+spin = "*"
+uart_16550 = "*"
+volatile = "*"
+x86_64 = "*"
 
 [dependencies.lazy_static]
-version = "1.4.0"
+version = "*"
 features = ["spin_no_std"]
 
 # Disable stack unwinding which requires OS specific libraries.
