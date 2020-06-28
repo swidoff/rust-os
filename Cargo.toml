@@ -21,6 +21,20 @@ x86_64 = "*"
 version = "*"
 features = ["spin_no_std"]
 
+[dependencies.crossbeam-queue]
+version = "*"
+default-features = false
+features = ["alloc"]
+
+[dependencies.conquer-once]
+version = "*"
+default-features = false
+
+[dependencies.futures-util]
+version = "*"
+default-features = false
+features = ["alloc"]
+
 # Disable stack unwinding which requires OS specific libraries.
 
 [profile.dev]

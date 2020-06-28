@@ -6,3 +6,4 @@
 .idea/sbt.xml
 .idea/vcs.xml
 rust-os.iml
+.idea/workspace.xml
